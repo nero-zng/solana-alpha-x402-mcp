@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.nero-zng/solana-alpha-x402-mcp",
+  "title": "Solana Alpha x402",
+  "description": "Pay-per-call Solana market intel via x402 USDC: price, news, trending, perps, rugcheck, token report, wallet.",
+  "repository": {
+    "url": "https://github.com/nero-zng/solana-alpha-x402-mcp",
+    "source": "github"
+  },
+  "version": "1.4.0",
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/nero-zng/solana-alpha-x402-mcp:1.4.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SOLANA_PRIVATE_KEY",
+          "description": "Optional Solana private key (base58) used to pay x402 USDC. Without it, tools return readable 402 payment requirements.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "SOLANA_ALPHA_API_BASE",
+          "description": "Optional API base URL override (default https://solana-x402-data.netlify.app).",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
