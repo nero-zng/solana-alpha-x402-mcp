@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+keypair.json
+id.json
+*-keypair.json
+
+# logs / coverage / caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+coverage/
+.nyc_output/
+.cache/
+.DS_Store
+*.swp
+*.swo
+
+# editor / OS
+.idea/
+.vscode/
+Thumbs.db
+
+# build / publish scratch
+dist/
+build/
+*.tgz
