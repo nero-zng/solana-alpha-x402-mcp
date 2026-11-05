@@ -1,5 +1,7 @@
 # solana-alpha-x402-mcp
 
+[![MCP score](https://glama.ai/mcp/servers/nero-zng/solana-alpha-x402-mcp/badges/score.svg)](https://glama.ai/mcp/servers/nero-zng/solana-alpha-x402-mcp)
+
 stdio **MCP server** for the [Solana Alpha API](https://solana-x402-data.netlify.app) (x402 v2, USDC on Solana mainnet).
 
 One tool per paid HTTP endpoint, plus a free `list_pricing` tool. Each tool calls the **live** API at `https://solana-x402-data.netlify.app` (override with `API_BASE_URL`).
