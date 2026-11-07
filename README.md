@@ -26,15 +26,24 @@ One tool per paid HTTP endpoint, plus a free `list_pricing` tool. Each tool call
 - **With `SOLANA_PRIVATE_KEY`:** uses `@x402/fetch` + `@x402/svm` (`ExactSvmScheme`) to sign and settle USDC payments automatically. Optional `MAX_PRICE_USDC` rejects calls above the cap.
 - This package is a **standalone** Node MCP server; it talks to the live Solana Alpha API over HTTPS and does not embed Netlify Functions.
 
-## Install (local / from this repo)
+## Install
+
+`solana-alpha-x402-mcp` is not published on npm. `https://registry.npmjs.org/solana-alpha-x402-mcp` returns HTTP 404 (checked 2026-11-07), so `npx -y solana-alpha-x402-mcp` fails.
+
+Run the server from the public GitHub repo:
+
+```bash
+npx -y github:nero-zng/solana-alpha-x402-mcp
+```
+
+From a full clone of this repo:
 
 ```bash
 npm install
 npm run smoke          # initialize + tools/list + get_price → 402 info (no key, no payment)
 ```
 
-Published npm name (when published): `solana-alpha-x402-mcp`  
-Until then, point your MCP host at the local entry: `node /absolute/path/to/solana-alpha-x402-mcp/src/index.mjs`
+Local entry: `node /absolute/path/to/solana-alpha-x402-mcp/src/index.mjs`
 
 ## Environment
 
@@ -78,14 +87,14 @@ With auto-pay (use a funded burner wallet only):
 }
 ```
 
-After `npm publish` of this package you can use:
+GitHub source (the npm package is not published):
 
 ```json
 {
   "mcpServers": {
     "solana-alpha-x402": {
       "command": "npx",
-      "args": ["-y", "solana-alpha-x402-mcp"],
+      "args": ["-y", "github:nero-zng/solana-alpha-x402-mcp"],
       "env": {
         "MAX_PRICE_USDC": "0.08"
       }
@@ -112,14 +121,14 @@ Project or user MCP config:
 }
 ```
 
-Or via npx once published:
+Or from GitHub (the npm package is not published):
 
 ```json
 {
   "mcpServers": {
     "solana-alpha-x402": {
       "command": "npx",
-      "args": ["-y", "solana-alpha-x402-mcp"]
+      "args": ["-y", "github:nero-zng/solana-alpha-x402-mcp"]
     }
   }
 }
